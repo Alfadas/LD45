@@ -7,9 +7,17 @@ public class Plant : MonoBehaviour
     [SerializeField] int health;
     [SerializeField] int growth;
     [SerializeField] int growthPerStage;
+    [SerializeField] float growingFactor = 1;
+    [SerializeField] int minWater = 1;
+    [SerializeField] int minSun = 1;
+    [SerializeField] int minNutrition = 1;
     [SerializeField] PlantPropertys plantPropertys;
     [SerializeField] GameObject[] growthStages;
     GameObject currentStage;
+
+    int water = 1;
+    int nutriton = 1;
+    int sun = 1;
 
     public void Awake()
     {
@@ -18,8 +26,25 @@ public class Plant : MonoBehaviour
     }
     private void Update()
     {
-        growth += 2;
-        int nextStage = Mathf.FloorToInt(growth/growthPerStage);
+        Grow();
+    }
+
+    private void Grow()
+    {
+        if (water < minWater)
+        {
+            ChangeHealth(-1);
+        }
+        if (nutriton < minNutrition)
+        {
+            ChangeHealth(-1);
+        }
+        if (sun < minSun)
+        {
+            ChangeHealth(-1);
+        }
+        growth += Mathf.RoundToInt(growingFactor * (water * sun * nutriton));
+        int nextStage = Mathf.FloorToInt(growth / growthPerStage);
         if (nextStage >= growthStages.Length)
         {
             ChangeHealth(-1);
