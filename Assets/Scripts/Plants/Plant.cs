@@ -14,6 +14,7 @@ public class Plant : MonoBehaviour
     [SerializeField] PlantPropertys plantPropertys;
     [SerializeField] GameObject[] growthStages;
     GameObject currentStage;
+    Tiles.Tile tile;
 
     int water = 1;
     int nutriton = 1;
@@ -31,11 +32,11 @@ public class Plant : MonoBehaviour
 
     private void Grow()
     {
-        if (water < minWater)
+        if (tile.Water < minWater)
         {
             ChangeHealth(-1);
         }
-        if (nutriton < minNutrition)
+        if (tile.Fertility < minNutrition)
         {
             ChangeHealth(-1);
         }

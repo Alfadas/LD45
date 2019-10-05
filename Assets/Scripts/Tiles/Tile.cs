@@ -4,12 +4,12 @@ namespace Tiles
 {
     public class Tile : MonoBehaviour
     {
-        public TileProperties Properties { get; }
+        public int Water { get; set; }
+        public int Fertility { get; set; }
         public Plant Plant { get; set; }
 
-        public Tile(TileProperties properties, Plant plant)
+        public Tile(Plant plant)
         {
-            Properties = properties;
             Plant = plant;
         }
     }
