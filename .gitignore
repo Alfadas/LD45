@@ -3,6 +3,9 @@
 [Tt]emp/
 Assets/AssetStoreTools*
 
+# JetBrains ide settings
+.idea
+
 # Visual Studio cache directory
 .vs/
 
