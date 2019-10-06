@@ -1,12 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlantSelectionUI : MonoBehaviour
 {
     [SerializeField] private Button plantSelectionButtonPrefab;
-    private readonly string[] plantTypes = {"Carrot"};
 
-    public string Selecteded { get; set; }
+    [SerializeField] private List<Plant> plantTypes;
+    [SerializeField] private Text selectionText;
+    [SerializeField] PlantSelection plantSelection;
 
     private void Awake()
     {
@@ -14,15 +16,15 @@ public class PlantSelectionUI : MonoBehaviour
         {
             GameObject plantSelectionButton =
                 Instantiate(plantSelectionButtonPrefab.gameObject, transform);
-            plantSelectionButton.GetComponentInChildren<Text>().text = type;
+            plantSelectionButton.GetComponentInChildren<Text>().text = type.Name;
             plantSelectionButton.GetComponent<Button>().onClick
                 .AddListener(() => OnPlantSelectionButtonClick(type));
         }
     }
 
-    private void OnPlantSelectionButtonClick(string type)
+    private void OnPlantSelectionButtonClick(Plant type)
     {
-        GameObject.Find("PlantSelectionText").GetComponent<Text>().text = type;
-        Selecteded = type;
+        selectionText.text = type.Name;
+        plantSelection.Selected = type;
     }
 }

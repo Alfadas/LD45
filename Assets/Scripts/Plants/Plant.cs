@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
@@ -15,7 +13,7 @@ public class Plant : MonoBehaviour
     [SerializeField] PlantPropertys plantPropertys;
     [SerializeField] GameObject[] growthStages;
     GameObject currentStage;
-    Tiles.Tile tile;
+    Tile tile;
 
     int water = 1;
     int nutriton = 1;
@@ -31,6 +29,7 @@ public class Plant : MonoBehaviour
         currentStage = growthStages[0];
         currentStage.SetActive(true);
     }
+
     private void Update()
     {
         Grow();
@@ -38,18 +37,21 @@ public class Plant : MonoBehaviour
 
     private void Grow()
     {
-        if (tile.Water < minWater)
+        if (tile.water < minWater)
         {
             ChangeHealth(-1);
         }
-        if (tile.Fertility < minNutrition)
+
+        if (tile.water < minNutrition)
         {
             ChangeHealth(-1);
         }
+
         if (sun < minSun)
         {
             ChangeHealth(-1);
         }
+
         growth += Mathf.RoundToInt(growingFactor * (water * sun * nutriton));
         int nextStage = Mathf.FloorToInt(growth / growthPerStage);
         if (nextStage >= growthStages.Length)
@@ -69,11 +71,11 @@ public class Plant : MonoBehaviour
         health += change;
         if (health <= 0)
         {
-            Object.Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
-    public void SetTile(Tiles.Tile tile)
+    public void SetTile(Tile tile)
     {
         this.tile = tile;
     }

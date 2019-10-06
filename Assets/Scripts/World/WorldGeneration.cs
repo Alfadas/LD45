@@ -1,11 +1,10 @@
-﻿using Tiles;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WorldGeneration : MonoBehaviour
 {
     [SerializeField] private int sideLength;
     [SerializeField] private Tile tilePrefab;
-
+    [SerializeField] private PlantSelection plantSelection;
 
     private GameObject[,] tiles;
     private int rowCount;
@@ -25,6 +24,7 @@ public class WorldGeneration : MonoBehaviour
                 var cellIdx = new Vector3Int(i, 0, j);
                 var pos = grid.GetCellCenterLocal(cellIdx);
                 var tile = Instantiate(tilePrefab.gameObject, pos, Quaternion.identity, transform);
+                tile.GetComponent<Tile>().PlantSelection = plantSelection;
                 tiles[i, j] = tile;
             }
         }

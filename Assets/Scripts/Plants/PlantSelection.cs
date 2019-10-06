@@ -2,9 +2,6 @@
 
 public class PlantSelection : MonoBehaviour
 {
-    public PlantTypes Selected { get; set; }
+    public Plant Selected { get; set; }
 
-    private void Awake()
-    {
-    }
 }
