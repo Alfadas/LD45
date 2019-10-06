@@ -8,12 +8,12 @@ public class PlantSelectionUI : MonoBehaviour
 
     [SerializeField] private List<Plant> plantTypes;
     [SerializeField] private Text selectionText;
-    [SerializeField] PlantSelection plantSelection;
+    [SerializeField] private GlobalInformation global;
 
     private void Awake()
     {
-        plantSelection.Selected = plantTypes[0];
-        selectionText.text = plantSelection.Selected.Name;
+        global.plantSelection.Selected = plantTypes[0];
+        selectionText.text = global.plantSelection.Selected.Name;
         foreach (var type in plantTypes)
         {
             GameObject plantSelectionButton =
@@ -27,6 +27,6 @@ public class PlantSelectionUI : MonoBehaviour
     private void OnPlantSelectionButtonClick(Plant type)
     {
         selectionText.text = type.Name;
-        plantSelection.Selected = type;
+        global.plantSelection.Selected = type;
     }
 }

@@ -2,9 +2,8 @@
 
 public class WorldGeneration : MonoBehaviour
 {
-    [SerializeField] private int sideLength;
     [SerializeField] private Tile tilePrefab;
-    [SerializeField] private PlantSelection plantSelection;
+    [SerializeField] private GlobalInformation global;
 
     private GameObject[,] tiles;
     private int rowCount;
@@ -12,10 +11,9 @@ public class WorldGeneration : MonoBehaviour
 
     private void Start()
     {
-        Grid grid = GetComponentInParent<Grid>();
+        Grid grid = global.worldGrid;
 
-        rowCount = sideLength;
-        colCount = sideLength;
+        rowCount = colCount = global.worldGridLength;
         tiles = new GameObject[rowCount, colCount];
         for (int i = 0; i < rowCount; i++)
         {
@@ -24,7 +22,6 @@ public class WorldGeneration : MonoBehaviour
                 var cellIdx = new Vector3Int(i, 0, j);
                 var pos = grid.GetCellCenterLocal(cellIdx);
                 var tile = Instantiate(tilePrefab.gameObject, pos, Quaternion.identity, transform);
-                tile.GetComponent<Tile>().PlantSelection = plantSelection;
                 tiles[i, j] = tile;
             }
         }
