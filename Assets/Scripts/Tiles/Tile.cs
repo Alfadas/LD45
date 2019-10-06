@@ -19,7 +19,9 @@ public class Tile : MonoBehaviour
     {
         if (global.plantSelection.Selected != null)
         {
-            GameObject plant = Instantiate(global.plantSelection.Selected.gameObject, transform);
+            var plantPos = transform.position + new Vector3(0, -0.4f, 0);
+            GameObject plant = Instantiate(global.plantSelection.Selected.gameObject, plantPos,
+                Quaternion.identity, transform);
             Plant = plant.GetComponent<Plant>();
             Plant.SetTile(this);
         }
