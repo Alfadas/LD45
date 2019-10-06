@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlantBag : MonoBehaviour
 {
     [SerializeField] private List<Plant> availailablePlantTypes;
     [SerializeField] private PlantSelectionUI ui;
     private Dictionary<Plant, int> seedCounts;
-    private const int DEFAULT_MIN_SEED_COUNT = 20;
+    private const int DEFAULT_MIN_SEED_COUNT = 50;
     private void Awake()
     {
         seedCounts = new Dictionary<Plant, int>();

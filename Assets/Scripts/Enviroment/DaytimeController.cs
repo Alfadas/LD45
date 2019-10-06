@@ -5,8 +5,31 @@ using UnityEngine;
 public class DaytimeController : MonoBehaviour
 {
     [SerializeField] float normalSpeed = 1;
+    [SerializeField] float lightStrengthMulti;
     [SerializeField] int nightMulti = 3;
     [SerializeField] Transform sunCycle;
+    bool isNight;
+
+    public float Sunlight
+    {
+        get
+        {
+            if (isNight)
+            {
+                return 0;
+            }
+            float rawLight = sunCycle.rotation.z - 0.5f;
+            if (rawLight < 0)
+            {
+                rawLight *= -1;
+            }
+            return rawLight * lightStrengthMulti;
+        }
+    }
+    public bool IsNight
+    {
+        get { return isNight; }
+    }
     void Update()
     {
         Vector3 currentRotation = sunCycle.rotation.eulerAngles;
@@ -14,10 +37,12 @@ public class DaytimeController : MonoBehaviour
         if (sunCycle.rotation.w > 0)
         {
             newRotation = Rotate(currentRotation, normalSpeed * nightMulti);
+            isNight = true;
         }
         else
         {
             newRotation = Rotate(currentRotation, normalSpeed);
+            isNight = false;
         }
         sunCycle.rotation = Quaternion.Euler(newRotation);
 

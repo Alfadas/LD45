@@ -6,8 +6,8 @@ public class Tile : MonoBehaviour
     [SerializeField] public int water = 1;
     [SerializeField] public int fertility = 1;
     private PlantBag plantBag;
-    private Plant Plant { get; set; }
-    private GlobalInformation global { get; set; }
+    public Plant Plant { get; set; }
+    public GlobalInformation global { get; set; }
 
     private void Awake()
     {
