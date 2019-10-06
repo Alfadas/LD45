@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a328a6e3e940b48db536126e73513d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  water: 100
-  fertility: 100
+  water: 1000
+  fertility: 1000
   tileViewPrefab: {fileID: -4337275061881380339, guid: 0ec8dd0ebf191488f97807557590db90,
     type: 3}
 --- !u!65 &4393985375009844631

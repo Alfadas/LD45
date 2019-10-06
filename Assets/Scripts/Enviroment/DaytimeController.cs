@@ -34,14 +34,15 @@ public class DaytimeController : MonoBehaviour
     {
         Vector3 currentRotation = sunCycle.rotation.eulerAngles;
         Vector3 newRotation = currentRotation;
+        float speed = normalSpeed * Time.deltaTime;
         if (sunCycle.rotation.w > 0)
         {
-            newRotation = Rotate(currentRotation, normalSpeed * nightMulti);
+            newRotation = Rotate(currentRotation, speed * nightMulti);
             isNight = true;
         }
         else
         {
-            newRotation = Rotate(currentRotation, normalSpeed);
+            newRotation = Rotate(currentRotation, speed);
             isNight = false;
         }
         sunCycle.rotation = Quaternion.Euler(newRotation);
@@ -50,6 +51,6 @@ public class DaytimeController : MonoBehaviour
 
     private Vector3 Rotate(Vector3 currentRotation, float speed)
     {
-        return currentRotation + new Vector3(0, 0, -speed);
+        return currentRotation + new Vector3(0, 0, speed);
     }
 }

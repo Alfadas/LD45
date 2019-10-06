@@ -9,12 +9,16 @@ public class Plant : MonoBehaviour
     [SerializeField] int growthPerStage;
     [SerializeField] float growingFactor = 1;
     [SerializeField] int waterNeed = 1;
-    [SerializeField] int minLight = 1;
+    [SerializeField] float minLight = 0.1f;
     [SerializeField] int nutritionNeed = 1;
     [SerializeField] PlantPropertys plantPropertys;
     [SerializeField] MeshRenderer[] growthStages;
-    int energy;
-    int health;
+
+    public int energy = 150; 
+    public int health;
+
+    public Color current;
+    public Color next;
     MeshRenderer currentStage;
     int currentIndex;
     Tile tile;
@@ -46,37 +50,42 @@ public class Plant : MonoBehaviour
 
     private void Grow()
     {
+        float nutrition = 0;
+        float water = 0;
         float light = tile.global.daytimeController.Sunlight - minLight;
-        if (light < 0)
+        if (light <= 0)
         {
             light = 0;
         }
-        float nutrition = 1;
-        if (tile.fertility < nutritionNeed)
-        {
-            nutrition = tile.fertility / nutritionNeed;
-            tile.fertility = 0;
-        }
         else
         {
-            tile.fertility -= nutritionNeed;
+            nutrition = 1;
+            if (tile.fertility < nutritionNeed)
+            {
+                nutrition = tile.fertility / nutritionNeed;
+                tile.fertility = 0;
+            }
+            else
+            {
+                tile.fertility -= nutritionNeed;
+            }
+            water = 1;
+            if (tile.water < waterNeed)
+            {
+                water = tile.water / waterNeed;
+                tile.water = 0;
+            }
+            else
+            {
+                tile.water -= waterNeed;
+            }
         }
-        float water = 1;
-        if (tile.water < waterNeed)
-        {
-            water = tile.water / waterNeed;
-            tile.water = 0;
-        }
-        else
-        {
-            tile.water -= waterNeed;
-        }
-        int energyGain = Mathf.RoundToInt(water * light * nutriton * currentIndex);
+        int energyGain = Mathf.RoundToInt(water * light * nutriton * (currentIndex + 1));
         energy += energyGain - energyNeed;
         if(energy < 0)
         {
-            energy = 0;
             ChangeHealth(energy);
+            energy = 0;
             return;
         }
         if (energyGain == 0)
@@ -111,10 +120,10 @@ public class Plant : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        float perc = health / maxHealth;
+        float perc = (float)health / (float)maxHealth;
         foreach (MeshRenderer renderer in growthStages)
         {
-            renderer.material.color = new Color(perc, perc, perc);
+            renderer.material.SetColor("_BaseColor", new Color(perc, perc, perc));
         }
     }
 
