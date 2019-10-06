@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9165361642953856861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Ambience
+  guid: 3163eeb40149344d97e27b31909a2d09
+  Banks:
+  - {fileID: 7887652531162659380}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 16000
+--- !u!114 &-8610117727016325937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudioManager
+  m_EditorClassIdentifier: 
+  Path: event:/AudioManager
+  guid: 222b25a197f1244e85e0a6ebd591d960
+  Banks:
+  - {fileID: 7887652531162659380}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 360000
 --- !u!114 &-4305373160177060095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23,6 +69,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 170000
+--- !u!114 &-3088127414321058342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/SunrisePart1
+  m_EditorClassIdentifier: 
+  Path: event:/Music/SunrisePart1
+  guid: 671f77725958094597c3f42f4dfe570c
+  Banks:
+  - {fileID: 7887652531162659380}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 177460
 --- !u!114 &-2665692041598307493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,11 +105,11 @@ MonoBehaviour:
   m_Name: bank:/Master Bank.strings.bank
   m_EditorClassIdentifier: 
   Path: C:\Users\Peppe\Desktop\LD45\LD45fmod\Build\Desktop\Master Bank.strings.bank
-  lastModified: 637058781136531352
+  lastModified: 637060055757645815
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 728
+    Value: 870
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -58,12 +127,15 @@ MonoBehaviour:
   - {fileID: -2665692041598307493}
   - {fileID: 7887652531162659380}
   EditorEvents:
-  - {fileID: -4305373160177060095}
+  - {fileID: -8610117727016325937}
+  - {fileID: -9165361642953856861}
+  - {fileID: 5081504952944134346}
+  - {fileID: -3088127414321058342}
   MasterBanks:
   - {fileID: 7887652531162659380}
   StringsBanks:
   - {fileID: -2665692041598307493}
-  stringsBankWriteTime: 637058781136531352
+  stringsBankWriteTime: 637060055757645815
   cacheVersion: 3
 --- !u!114 &144306159661633639
 MonoBehaviour:
@@ -88,6 +160,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 447
+--- !u!114 &5081504952944134346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/SunrisePart2
+  m_EditorClassIdentifier: 
+  Path: event:/Music/SunrisePart2
+  guid: 3ca616888a06b24286f9f27c3dacfa51
+  Banks:
+  - {fileID: 7887652531162659380}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 147601
 --- !u!114 &7887652531162659380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,9 +196,9 @@ MonoBehaviour:
   m_Name: bank:/Master Bank.bank
   m_EditorClassIdentifier: 
   Path: C:\Users\Peppe\Desktop\LD45\LD45fmod\Build\Desktop\Master Bank.bank
-  lastModified: 637058781136461374
+  lastModified: 637060055757565833
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1835296
+    Value: 24660128
   Exists: 1
