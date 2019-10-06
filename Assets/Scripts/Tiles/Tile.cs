@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Tile : MonoBehaviour
@@ -11,19 +12,25 @@ public class Tile : MonoBehaviour
     private void Awake()
     {
         global = GameObject.Find("GlobalInformation").GetComponent<GlobalInformation>();
-
-        Instantiate(tileViewPrefab, transform);
     }
 
     private void OnMouseDown()
     {
-        if (global.plantSelection.Selected != null)
+        if (IsPlantable())
         {
-            var plantPos = transform.position + new Vector3(0, -0.4f, 0);
-            GameObject plant = Instantiate(global.plantSelection.Selected.gameObject, plantPos,
-                Quaternion.identity, transform);
-            Plant = plant.GetComponent<Plant>();
-            Plant.SetTile(this);
+            PlantPlant();
         }
+    }
+
+    private void PlantPlant()
+    {
+        GameObject plant = Instantiate(global.plantSelection.Selected.gameObject, transform);
+        Plant = plant.GetComponent<Plant>();
+        Plant.SetTile(this);
+    }
+
+    private Boolean IsPlantable()
+    {
+        return global.plantSelection.Selected != null && Plant == null;
     }
 }
