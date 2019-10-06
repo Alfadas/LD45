@@ -5,14 +5,14 @@ public class Tile : MonoBehaviour
 {
     [SerializeField] public int water = 1;
     [SerializeField] public int fertility = 1;
-    [SerializeField] private TileView tileViewPrefab;
+    private PlantBag plantBag;
     public Plant Plant { get; set; }
     public GlobalInformation global { get; set; }
-
 
     private void Awake()
     {
         global = GameObject.Find("GlobalInformation").GetComponent<GlobalInformation>();
+        plantBag = GameObject.Find("PlantBag").GetComponent<PlantBag>();
     }
 
     private void OnMouseDown()
@@ -25,13 +25,21 @@ public class Tile : MonoBehaviour
 
     private void PlantPlant()
     {
-        GameObject plant = Instantiate(global.plantSelection.Selected.gameObject, transform);
+        Plant type = global.plantSelection.Selected;
+        plantBag.DecreaseSeedsOf(type);
+        GameObject plant = Instantiate(type.gameObject, transform);
         Plant = plant.GetComponent<Plant>();
         Plant.SetTile(this);
     }
 
     private Boolean IsPlantable()
     {
-        return global.plantSelection.Selected != null && Plant == null;
+        Plant type = global.plantSelection.Selected;
+        return type != null && IsCurrentlyNothingPlanted() && plantBag.HasSeedsOf(type);
+    }
+
+    private Boolean IsCurrentlyNothingPlanted()
+    {
+        return Plant == null;
     }
 }
