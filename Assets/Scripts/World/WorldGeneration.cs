@@ -5,25 +5,28 @@ public class WorldGeneration : MonoBehaviour
     [SerializeField] private Tile tilePrefab;
     [SerializeField] private GlobalInformation global;
 
-    private GameObject[,] tiles;
+    private Tile[,] tiles;
     private int rowCount;
     private int colCount;
 
     private void Start()
     {
-        Grid grid = global.worldGrid;
-
         rowCount = colCount = global.worldGridLength;
-        tiles = new GameObject[rowCount, colCount];
+        tiles = new Tile[rowCount, colCount];
         for (int i = 0; i < rowCount; i++)
         {
             for (int j = 0; j < colCount; j++)
             {
-                var cellIdx = new Vector3Int(i, 0, j);
-                var pos = grid.GetCellCenterLocal(cellIdx);
-                var tile = Instantiate(tilePrefab.gameObject, pos, Quaternion.identity, transform);
-                tiles[i, j] = tile;
+                createTileInCell(i, j);
             }
         }
+    }
+
+    private void createTileInCell(int i, int j)
+    {
+        var cellIdx = new Vector3Int(i, 0, j);
+        var pos = global.worldGrid.GetCellCenterLocal(cellIdx);
+        var tile = Instantiate(tilePrefab.gameObject, pos, Quaternion.identity, transform);
+        tiles[i, j] = tile.GetComponent<Tile>();
     }
 }
