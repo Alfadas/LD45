@@ -12,6 +12,8 @@ public class PlantSelectionUI : MonoBehaviour
 
     private void Awake()
     {
+        plantSelection.Selected = plantTypes[0];
+        selectionText.text = plantSelection.Selected.Name;
         foreach (var type in plantTypes)
         {
             GameObject plantSelectionButton =
