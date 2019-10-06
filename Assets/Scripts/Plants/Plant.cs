@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
+    [SerializeField] string name;
     [SerializeField] int health;
     [SerializeField] int growth;
     [SerializeField] int growthPerStage;
@@ -19,6 +20,11 @@ public class Plant : MonoBehaviour
     int water = 1;
     int nutriton = 1;
     int sun = 1;
+
+    public string Name
+    {
+        get { return name; }
+    }
 
     public void Awake()
     {
@@ -65,5 +71,10 @@ public class Plant : MonoBehaviour
         {
             Object.Destroy(gameObject);
         }
+    }
+
+    public void SetTile(Tiles.Tile tile)
+    {
+        this.tile = tile;
     }
 }
