@@ -47,8 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   water: 1
   fertility: 1
-  tileViewPrefab: {fileID: -4337275061881380339, guid: 0ec8dd0ebf191488f97807557590db90,
-    type: 3}
 --- !u!65 &4393985375009844631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -129,7 +127,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4337275061881380339, guid: 0ec8dd0ebf191488f97807557590db90, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ec8dd0ebf191488f97807557590db90, type: 3}
 --- !u!4 &2640465319272387374 stripped
 Transform:
