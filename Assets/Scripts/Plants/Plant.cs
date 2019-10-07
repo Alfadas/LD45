@@ -43,6 +43,10 @@ public class Plant : MonoBehaviour
 
     public void Awake()
     {
+        foreach (MeshRenderer render in growthStages)
+        {
+            render.gameObject.SetActive(false);
+        }
         currentStage = growthStages[0];
         currentStageIndex = 0;
         currentStage.gameObject.SetActive(true);
@@ -50,6 +54,7 @@ public class Plant : MonoBehaviour
 
     private void Start()
     {
+        growth = 0;
         energyNeed = Mathf.RoundToInt(PlantPropertyConst.energyNeed_Stable_Multi * plantPropertys.Stable);
         waterNeed = Mathf.RoundToInt(PlantPropertyConst.waterNeed_Stable_Multi * plantPropertys.Stable);
         nutritionNeed = Mathf.RoundToInt(PlantPropertyConst.nutritionNeed_Stable_Multi * plantPropertys.Stable);
@@ -57,7 +62,7 @@ public class Plant : MonoBehaviour
         energy = PlantPropertyConst.startEnergy_Stable_Multi * plantPropertys.Stable;
         maxHealth = PlantPropertyConst.maxHealth_Stable_Multi * plantPropertys.Stable;
         growthPerStage = PlantPropertyConst.growthPerStage_Stable_Multi * plantPropertys.Stable;
-        health = maxHealth;
+        ChangeHealth(maxHealth);
     }
 
     public void Grow()
