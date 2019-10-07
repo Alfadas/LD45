@@ -122,7 +122,7 @@ public class Plant : MonoBehaviour
 
     public void ResistLocalWind(int localWind)
     {
-        Debug.Log(WindResistance * 2 - localWind);
+        //Debug.Log(WindResistance * 2 - localWind);
     }
     void ChangeHealth(int change)
     {
