@@ -20,6 +20,7 @@ public class Tile : MonoBehaviour
         set
         {
             hasPlant = value != null;
+            GetComponentInChildren<Renderer>().enabled = !hasPlant;
             plant = value;
         }
     }
