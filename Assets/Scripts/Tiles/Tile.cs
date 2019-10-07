@@ -9,6 +9,18 @@ public class Tile : MonoBehaviour
     public Plant Plant { get; set; }
     public GlobalInformation global { get; set; }
 
+    public int PlantWindResistance
+    {
+        get
+        {
+            if (Plant == null)
+            {
+                return 0;
+            }
+            return Plant.WindResistance;
+        }
+    }
+
     private void Awake()
     {
         global = GameObject.Find("GlobalInformation").GetComponent<GlobalInformation>();

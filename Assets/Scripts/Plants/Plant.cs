@@ -21,8 +21,16 @@ public class Plant : MonoBehaviour
     public Color current;
     public Color next;
     MeshRenderer currentStage;
-    int currentIndex;
+    int currentStageIndex;
     Tile tile;
+
+    public int WindResistance
+    {
+        get
+        {
+            return Mathf.FloorToInt(plantPropertys.Stable * currentStageIndex * 0.5f);
+        }
+    }
 
     public string Name
     {
@@ -32,7 +40,7 @@ public class Plant : MonoBehaviour
     public void Awake()
     {
         currentStage = growthStages[0];
-        currentIndex = 0;
+        currentStageIndex = 0;
         currentStage.gameObject.SetActive(true);
     }
 
@@ -85,7 +93,7 @@ public class Plant : MonoBehaviour
                 tile.water -= waterNeed;
             }
         }
-        int energyGain = Mathf.RoundToInt(water * light * nutrition * (currentIndex + 1));
+        int energyGain = Mathf.RoundToInt(water * light * nutrition * (currentStageIndex + 1));
         energy += energyGain - energyNeed;
         if(energy < 0)
         {
@@ -107,11 +115,15 @@ public class Plant : MonoBehaviour
         {
             currentStage.gameObject.SetActive(false);
             currentStage = growthStages[nextStage];
-            currentIndex = nextStage;
+            currentStageIndex = nextStage;
             currentStage.gameObject.SetActive(true);
         }
     }
 
+    public void ResistLocalWind(int localWind)
+    {
+        Debug.Log(WindResistance * 2 - localWind);
+    }
     void ChangeHealth(int change)
     {
         health += change;
