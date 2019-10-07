@@ -6,6 +6,7 @@ public class PlantBag : MonoBehaviour
 {
     [SerializeField] private List<Plant> availablePlantTypes;
     [SerializeField] private PlantSelectionUI ui;
+    [SerializeField] private PlantBreedingPanel breedingUi;
     private Dictionary<Plant, int> seedCounts;
     private const int DEFAULT_MIN_SEED_COUNT = 50;
     private void Awake()
@@ -62,6 +63,7 @@ public class PlantBag : MonoBehaviour
         ui.UpdateAvailablePlantTypes(result);
         seedCounts.Add(result, DEFAULT_MIN_SEED_COUNT);
         ui.UpdateSeedCounts(GetSeedCounts());
+        breedingUi.UpdateAvailablePlants();
     }
     
     public bool IsInPlantBag(Plant type) {

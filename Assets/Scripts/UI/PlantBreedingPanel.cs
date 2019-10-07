@@ -37,4 +37,9 @@ public class PlantBreedingPanel : MonoBehaviour
         var result = plantBreeder.Breed(first, second);
         resultText.text = result == null ? "Nothing" : result.Name;
     }
+
+    public void UpdateAvailablePlants()
+    {
+        Awake();
+    }
 }
