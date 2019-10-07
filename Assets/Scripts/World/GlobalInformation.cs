@@ -8,5 +8,6 @@ public class GlobalInformation : MonoBehaviour
     [SerializeField] public DaytimeController daytimeController;
     [SerializeField] public WeatherController weatherController;
     [SerializeField] public DisplaLayerManager displaLayerManager;
+    [SerializeField] public AnimalManager animalManager;
     [SerializeField] public Tile[,] tiles;
 }

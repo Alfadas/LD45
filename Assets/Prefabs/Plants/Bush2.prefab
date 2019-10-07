@@ -72,11 +72,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -3459536021931087610, guid: 4e75733abddfa2840ae40a42e53a7869,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -782247036179096765, guid: 4e75733abddfa2840ae40a42e53a7869,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -91,6 +86,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3459536021931087610, guid: 4e75733abddfa2840ae40a42e53a7869,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e75733abddfa2840ae40a42e53a7869, type: 3}
@@ -172,11 +172,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 438865427078929910, guid: 2fd11ff26a430fe4daca02b869da3188,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6247873154175820344, guid: 2fd11ff26a430fe4daca02b869da3188,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -191,6 +186,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 438865427078929910, guid: 2fd11ff26a430fe4daca02b869da3188,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fd11ff26a430fe4daca02b869da3188, type: 3}
@@ -272,11 +272,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 97537576781959397, guid: b453cf538b2e7d24fa710eb03ce1fe94,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2958137412353014592, guid: b453cf538b2e7d24fa710eb03ce1fe94,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -291,6 +286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 97537576781959397, guid: b453cf538b2e7d24fa710eb03ce1fe94,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b453cf538b2e7d24fa710eb03ce1fe94, type: 3}
@@ -407,6 +407,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6378724518330936051, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: m_Name
+      value: Bush2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.data[0]
+      value: 
+      objectReference: {fileID: 5298026109841497568}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.data[1]
+      value: 
+      objectReference: {fileID: 5578672423712300443}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.data[2]
+      value: 
+      objectReference: {fileID: 3558832485488257316}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.data[3]
+      value: 
+      objectReference: {fileID: 6802984883924473901}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: name
+      value: Bush2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: plantPropertys.stable
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 2415424249903505641, guid: c64ba902032a7854dab24ac71986afaa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -461,41 +501,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6378724518330936051, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: m_Name
-      value: Bush2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.data[0]
-      value: 
-      objectReference: {fileID: 5298026109841497568}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.data[1]
-      value: 
-      objectReference: {fileID: 5578672423712300443}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.data[2]
-      value: 
-      objectReference: {fileID: 3558832485488257316}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.data[3]
-      value: 
-      objectReference: {fileID: 6802984883924473901}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: name
-      value: Bush2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c64ba902032a7854dab24ac71986afaa, type: 3}

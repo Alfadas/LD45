@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TickManager : MonoBehaviour
@@ -56,15 +58,40 @@ public class TickManager : MonoBehaviour
         {
             layerChanged = true;
         }
-
+        List<Plant> eatables = new List<Plant>();
         foreach (Tile tile in global.tiles)
         {
             TileTick(tile, displayLayer, layerChanged);
             if (tile.HasPlant)
             {
                 PlantTick(tile.Plant, localWind);
+                if (tile.Plant.Eatable > 0 && tile.Plant.isGrownUp())
+                {
+                    eatables.Add(tile.Plant);
+                }
             }
         }
+        if (eatables.Count > 0)
+        {
+            int breedChances = global.animalManager.FeedAnimals(eatables.Sum(item => item.AnimalAttraction));
+
+            for (int i = 0; i <= breedChances; i++)
+            {
+                GetRandomEmptyTile().PlantPlantByReproduction(eatables[Random.Range(0, eatables.Count)]);
+            }
+        }
+    }
+
+    private Tile GetRandomEmptyTile()
+    {
+        int maxIndex = global.worldGridLength - 1;
+        int row = Random.Range(-1, maxIndex -1);
+        int col = Random.Range(-1, maxIndex -1);
+        if (global.tiles[row, col].HasPlant)
+        {
+            return GetRandomEmptyTile();
+        }
+        return global.tiles[row, col];
     }
 
     private Tile getRandomTileAround(Tile tile)
@@ -92,7 +119,7 @@ public class TickManager : MonoBehaviour
         {
             getRandomTileAround(plant.Tile).PlantPlantByReproduction(plant);
         }
-        plant.Grow();
+        plant.Live();
         plant.ResistLocalWind(localWind);
     }
 
@@ -103,6 +130,6 @@ public class TickManager : MonoBehaviour
             tile.ChangeLayer(displayLayer);
         }
         tile.RefreshLayer();
-        tile.water += global.weatherController.WeatherWaterGain;
+        tile.Water += global.weatherController.WeatherWaterGain;
     }
 }

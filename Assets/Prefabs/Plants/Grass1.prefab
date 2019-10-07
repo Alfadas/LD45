@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 105278162634374613, guid: 56c0648adf29dff4aa63361c2b3d82cd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 56c0648adf29dff4aa63361c2b3d82cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -92,11 +97,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 51d8ffd0ae8ab8b41a03cf3f12c4c1f0, type: 2}
-    - target: {fileID: 105278162634374613, guid: 56c0648adf29dff4aa63361c2b3d82cd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c0648adf29dff4aa63361c2b3d82cd, type: 3}
 --- !u!23 &7218128768300235013 stripped
@@ -121,6 +121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274096842560586814, guid: 675ffa2d1263a6c4791e1f1c9dd40d66,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 675ffa2d1263a6c4791e1f1c9dd40d66,
         type: 3}
@@ -197,11 +202,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 51d8ffd0ae8ab8b41a03cf3f12c4c1f0, type: 2}
-    - target: {fileID: 7274096842560586814, guid: 675ffa2d1263a6c4791e1f1c9dd40d66,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 675ffa2d1263a6c4791e1f1c9dd40d66, type: 3}
 --- !u!23 &5224975367771784916 stripped
@@ -226,6 +226,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120102531586300068, guid: ae49b84e66baf454196e9712a48282e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ae49b84e66baf454196e9712a48282e9,
         type: 3}
@@ -296,11 +301,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6120102531586300068, guid: ae49b84e66baf454196e9712a48282e9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9105710904972929376, guid: ae49b84e66baf454196e9712a48282e9,
         type: 3}
@@ -427,6 +427,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6378724518330936051, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: m_Name
+      value: Grass1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378724518330936051, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.data[0]
+      value: 
+      objectReference: {fileID: 5224975367771784916}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.data[1]
+      value: 
+      objectReference: {fileID: 7249222842480817034}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.data[2]
+      value: 
+      objectReference: {fileID: 6190859106469147130}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.data[3]
+      value: 
+      objectReference: {fileID: 7218128768300235013}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: name
+      value: Grass1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: plantPropertys.stable
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2415424249903505641, guid: c64ba902032a7854dab24ac71986afaa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -481,46 +526,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6378724518330936051, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: m_Name
-      value: Grass1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6378724518330936051, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.data[0]
-      value: 
-      objectReference: {fileID: 5224975367771784916}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.data[1]
-      value: 
-      objectReference: {fileID: 7249222842480817034}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.data[2]
-      value: 
-      objectReference: {fileID: 6190859106469147130}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.data[3]
-      value: 
-      objectReference: {fileID: 7218128768300235013}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: name
-      value: Grass1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c64ba902032a7854dab24ac71986afaa, type: 3}
