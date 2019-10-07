@@ -20,6 +20,7 @@ public class WorldGeneration : MonoBehaviour
                 createTileInCell(i, j);
             }
         }
+        global.tiles = tiles;
     }
 
     private void createTileInCell(int i, int j)

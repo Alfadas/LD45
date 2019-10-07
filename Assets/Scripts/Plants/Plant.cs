@@ -13,6 +13,7 @@ public class Plant : MonoBehaviour
     [SerializeField] int nutritionNeed = 1;
     [SerializeField] PlantPropertys plantPropertys;
     [SerializeField] MeshRenderer[] growthStages;
+    [SerializeField] bool degrading = false;
 
     public int energy = 150; 
     public int health;
@@ -22,9 +23,6 @@ public class Plant : MonoBehaviour
     MeshRenderer currentStage;
     int currentIndex;
     Tile tile;
-
-    int water = 1;
-    int nutriton = 1;
 
     public string Name
     {
@@ -40,16 +38,23 @@ public class Plant : MonoBehaviour
 
     private void Start()
     {
+        energyNeed = Mathf.RoundToInt(PlantPropertyConst.energyNeed_Stable_Multi * plantPropertys.Stable);
+        waterNeed = Mathf.RoundToInt(PlantPropertyConst.waterNeed_Stable_Multi * plantPropertys.Stable);
+        nutritionNeed = Mathf.RoundToInt(PlantPropertyConst.nutritionNeed_Stable_Multi * plantPropertys.Stable);
+        minLight = PlantPropertyConst.minLight_Stable_Multi * plantPropertys.Stable;
+        energy = PlantPropertyConst.startEnergy_Stable_Multi * plantPropertys.Stable;
+        maxHealth = PlantPropertyConst.maxHealth_Stable_Multi * plantPropertys.Stable;
+        growthPerStage = PlantPropertyConst.growthPerStage_Stable_Multi * plantPropertys.Stable;
         health = maxHealth;
     }
 
-    private void Update()
+    public void Grow()
     {
-        Grow();
-    }
-
-    private void Grow()
-    {
+        if (degrading)
+        {
+            tile.fertility += Mathf.RoundToInt(growth * PlantPropertyConst.degrading_FertilityReturn_Multi);
+            ChangeHealth(-maxHealth / PlantPropertyConst.degradingTime);
+        }
         float nutrition = 0;
         float water = 0;
         float light = tile.global.daytimeController.Sunlight - minLight;
@@ -80,7 +85,7 @@ public class Plant : MonoBehaviour
                 tile.water -= waterNeed;
             }
         }
-        int energyGain = Mathf.RoundToInt(water * light * nutriton * (currentIndex + 1));
+        int energyGain = Mathf.RoundToInt(water * light * nutrition * (currentIndex + 1));
         energy += energyGain - energyNeed;
         if(energy < 0)
         {
@@ -92,11 +97,11 @@ public class Plant : MonoBehaviour
         {
             return;
         }
-        growth += Mathf.RoundToInt(growingFactor * (water * light * nutriton));
+        growth += Mathf.RoundToInt(growingFactor * (water * light * nutrition));
         int nextStage = Mathf.FloorToInt(growth / growthPerStage);
         if (nextStage >= growthStages.Length)
         {
-            ChangeHealth(-1);
+            degrading = true;
         }
         else if (growthStages[nextStage] != currentStage)
         {
@@ -116,6 +121,7 @@ public class Plant : MonoBehaviour
         }
         else if (health <= 0)
         {
+            tile.fertility += Mathf.RoundToInt(growth * PlantPropertyConst.dying_FertilityReturn_Multi);
             tile.Plant = null;
             Destroy(gameObject);
             return;
