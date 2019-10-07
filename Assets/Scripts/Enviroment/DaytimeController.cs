@@ -8,6 +8,7 @@ public class DaytimeController : MonoBehaviour
     [SerializeField] float lightStrengthMulti;
     [SerializeField] int nightMulti = 3;
     [SerializeField] Transform sunCycle;
+    [SerializeField] GlobalInformation global;
     bool isNight;
 
     public float Sunlight
@@ -18,35 +19,29 @@ public class DaytimeController : MonoBehaviour
             {
                 return 0;
             }
-            float rawLight = sunCycle.rotation.z - 0.5f;
-            if (rawLight < 0)
-            {
-                rawLight *= -1;
-            }
-            return rawLight * lightStrengthMulti;
+            float rawLight = sunCycle.rotation.z;
+            return (-2*(rawLight*rawLight) + 2* rawLight) * lightStrengthMulti * global.weatherController.WeatherSunDim;
         }
     }
     public bool IsNight
     {
         get { return isNight; }
     }
-    void Update()
+    public void ProgressDay()
     {
         Vector3 currentRotation = sunCycle.rotation.eulerAngles;
         Vector3 newRotation = currentRotation;
-        float speed = normalSpeed * Time.deltaTime;
         if (sunCycle.rotation.w > 0)
         {
-            newRotation = Rotate(currentRotation, speed * nightMulti);
+            newRotation = Rotate(currentRotation, normalSpeed * nightMulti);
             isNight = true;
         }
         else
         {
-            newRotation = Rotate(currentRotation, speed);
+            newRotation = Rotate(currentRotation, normalSpeed);
             isNight = false;
         }
         sunCycle.rotation = Quaternion.Euler(newRotation);
-
     }
 
     private Vector3 Rotate(Vector3 currentRotation, float speed)
