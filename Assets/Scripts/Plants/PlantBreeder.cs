@@ -11,26 +11,39 @@ public class PlantBreeder : MonoBehaviour
     {
         combis = new List<BreedableCombination>
         {
-            new BreedableCombination(plantTypes[0], plantTypes[1])
-            {
-                Result = plantTypes[2]
-            }
+            Combi("Grass1", "Grass1", "Grass2"),
+            Combi("Grass1", "Grass3", "Bush1"),
+            Combi("Bush1", "Bush1", "Bush2"),
+            Combi("Grass2", "Grass3", "Tomato"),
+            Combi("Tomato", "Bush2", "BerryBush"),
+            Combi("Grass3", "Grass3", "Onion"),
+            Combi("Grass2", "Grass2", "Grass3"),
+            Combi("Bush2", "Bush2", "Tree"),
+            Combi("Onion", "Grass3", "Carrot")
         };
 
         if (first == null || second == null) return null;
-        if (first == second) return null;
 
-        var testCombi = new BreedableCombination(first, second);
+        var testCombi = new BreedableCombination(first, second, null);
 
         var result = combis.Find(combination => combination.Equals(testCombi));
 
-        if (result != null && !plantBag.IsInPlantBag(result.Result))
+        if (result != null && !plantBag.IsInPlantBag(result.result))
         {
-            plantBag.AddType(result.Result);
-            return result.Result;
+            plantBag.AddType(result.result);
+            return result.result;
         }
 
         return null;
+    }
+    public Plant FindByName(string name)
+    {
+        return plantTypes.Find(type => type.Name.Equals(name));
+    }
+
+    private BreedableCombination Combi(string first, string second, string result)
+    {
+        return new BreedableCombination(FindByName(first), FindByName(second), FindByName(result));
     }
 }
 
@@ -38,13 +51,14 @@ class BreedableCombination
 {
     private readonly Plant first;
     private readonly Plant second;
-    public Plant Result;
+    public Plant result;
 
-    public BreedableCombination(Plant first, Plant second)
+    public BreedableCombination(Plant first, Plant second, Plant result
+    )
     {
         this.first = first;
         this.second = second;
-        Result = null;
+        this.result = result;
     }
 
     public bool Equals(BreedableCombination combination)
@@ -52,4 +66,5 @@ class BreedableCombination
         return (first.Name == combination.first.Name && second.Name == combination.second.Name) ||
                (first.Name == combination.second.Name && second.Name == combination.first.Name);
     }
+
 }

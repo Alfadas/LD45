@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlantBag : MonoBehaviour
 {
-    [SerializeField] private List<Plant> availailablePlantTypes;
+    [SerializeField] private List<Plant> availablePlantTypes;
     [SerializeField] private PlantSelectionUI ui;
     private Dictionary<Plant, int> seedCounts;
     private const int DEFAULT_MIN_SEED_COUNT = 50;
     private void Awake()
     {
         seedCounts = new Dictionary<Plant, int>();
-        foreach (var type in availailablePlantTypes)
+        foreach (var type in availablePlantTypes)
         {
             seedCounts.Add(type, DEFAULT_MIN_SEED_COUNT);
         }
@@ -19,7 +19,7 @@ public class PlantBag : MonoBehaviour
 
     public List<Plant> GetTypes()
     {
-        return availailablePlantTypes;
+        return availablePlantTypes;
     }
 
     public Boolean HasSeedsOf(Plant type)
@@ -58,13 +58,13 @@ public class PlantBag : MonoBehaviour
 
     public void AddType(Plant result)
     {
-        availailablePlantTypes.Add(result);
+        availablePlantTypes.Add(result);
         ui.UpdateAvailablePlantTypes(result);
         seedCounts.Add(result, DEFAULT_MIN_SEED_COUNT);
         ui.UpdateSeedCounts(GetSeedCounts());
     }
     
     public bool IsInPlantBag(Plant type) {
-        return null != availailablePlantTypes.Find(availType => type.Equals(availType));
+        return null != availablePlantTypes.Find(type.Equals);
     }
 }
