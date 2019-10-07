@@ -7,5 +7,6 @@ public class GlobalInformation : MonoBehaviour
     [SerializeField] public Grid worldGrid;
     [SerializeField] public DaytimeController daytimeController;
     [SerializeField] public WeatherController weatherController;
+    [SerializeField] public DisplaLayerManager displaLayerManager;
     [SerializeField] public Tile[,] tiles;
 }

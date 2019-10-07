@@ -55,9 +55,17 @@ public class TickManager : MonoBehaviour
         }
         global.weatherController.MoveClouds();
         int localWind = global.weatherController.CalcLocalWind(windResistanceSum);
+
+        int displayLayer = global.displaLayerManager.Selected;
+        bool layerChanged = false;
+        if (displayLayer != 4)
+        {
+            layerChanged = true;
+        }
+
         foreach (Tile tile in global.tiles)
         {
-            TileTick(tile);
+            TileTick(tile, displayLayer, layerChanged);
             if (tile.HasPlant)
             {
                 PlantTick(tile.Plant, localWind);
@@ -71,8 +79,13 @@ public class TickManager : MonoBehaviour
         plant.ResistLocalWind(localWind);
     }
 
-    private void TileTick(Tile tile)
+    private void TileTick(Tile tile, int displayLayer, bool layerChanged)
     {
+        if (layerChanged)
+        {
+            tile.ChangeLayer(displayLayer);
+        }
+        tile.RefreshLayer();
         tile.water += global.weatherController.WeatherWaterGain;
     }
 }

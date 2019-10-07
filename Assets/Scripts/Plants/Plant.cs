@@ -28,7 +28,7 @@ public class Plant : MonoBehaviour
     {
         get
         {
-            return Mathf.FloorToInt(plantPropertys.Stable * currentStageIndex * 0.5f);
+            return Mathf.FloorToInt(plantPropertys.Stable * currentStageIndex * 0.25f);
         }
     }
 
@@ -61,6 +61,10 @@ public class Plant : MonoBehaviour
         if (degrading)
         {
             tile.fertility += Mathf.RoundToInt(growth * PlantPropertyConst.degrading_FertilityReturn_Multi);
+            foreach(Vector2Int vector2Int in PlantPropertyConst.directNeigbour)
+            {
+                //global.Tiles[tile.Row + vector2Int.x]
+            }
             ChangeHealth(-maxHealth / PlantPropertyConst.degradingTime);
         }
         float nutrition = 0;
@@ -122,7 +126,7 @@ public class Plant : MonoBehaviour
 
     public void ResistLocalWind(int localWind)
     {
-        //Debug.Log(WindResistance * 2 - localWind);
+        Debug.Log(WindResistance * 2 - localWind * currentStageIndex * 0.5f);
     }
     void ChangeHealth(int change)
     {
