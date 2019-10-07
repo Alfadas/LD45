@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public static class PlantPropertyConst
+﻿public static class PlantPropertyConst
 {
     public const float dying_FertilityReturn_Multi = 0.05f;
     public const float degrading_FertilityReturn_Multi = 0.02f;

@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour
 {
     [SerializeField] public int water = 1;
     [SerializeField] public int fertility = 1;
+    
     private PlantBag plantBag;
     private Plant plant;
     private bool hasPlant = false;

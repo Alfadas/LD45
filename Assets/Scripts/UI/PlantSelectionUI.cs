@@ -18,13 +18,13 @@ public class PlantSelectionUI : MonoBehaviour
         selectionText.text = global.plantSelection.Selected.Name;
         foreach (var type in plantBag.GetTypes())
         {
-            CreateInitialPlantSelectionButton(type);
+            CreatePlantSelectionButton(type);
         }
 
         UpdateSeedCounts(plantBag.GetSeedCounts());
     }
 
-    private void CreateInitialPlantSelectionButton(Plant type)
+    private void CreatePlantSelectionButton(Plant type)
     {
         GameObject plantSelectionButton =
             Instantiate(plantSelectionButtonPrefab.gameObject, transform);
@@ -46,5 +46,10 @@ public class PlantSelectionUI : MonoBehaviour
             var text = plantSelectionButtons[plant].GetComponentInChildren<Text>();
             text.text = $"{plant.Name}: {seedCounts[plant]}";
         }
+    }
+
+    public void UpdateAvailablePlantTypes(Plant type)
+    {
+        CreatePlantSelectionButton(type);
     }
 }

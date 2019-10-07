@@ -12,6 +12,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tomatoes-0
       objectReference: {fileID: 0}
+    - target: {fileID: 6769805286068590325, guid: 610d1e99b7ad7c2459dd6c7a81730986,
+        type: 3}
+      propertyPath: m_Name
+      value: Tomatoes-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769805286068590325, guid: 610d1e99b7ad7c2459dd6c7a81730986,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -418719901031944295, guid: 610d1e99b7ad7c2459dd6c7a81730986,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 51d8ffd0ae8ab8b41a03cf3f12c4c1f0, type: 2}
     - target: {fileID: -4216859302048453862, guid: 610d1e99b7ad7c2459dd6c7a81730986,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -82,21 +97,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: -418719901031944295, guid: 610d1e99b7ad7c2459dd6c7a81730986,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 51d8ffd0ae8ab8b41a03cf3f12c4c1f0, type: 2}
-    - target: {fileID: 6769805286068590325, guid: 610d1e99b7ad7c2459dd6c7a81730986,
-        type: 3}
-      propertyPath: m_Name
-      value: Tomatoes-0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6769805286068590325, guid: 610d1e99b7ad7c2459dd6c7a81730986,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 610d1e99b7ad7c2459dd6c7a81730986, type: 3}
 --- !u!23 &6218245267397126785 stripped
@@ -117,6 +117,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tomatoes-2
       objectReference: {fileID: 0}
+    - target: {fileID: 2020601624538208979, guid: 2f0e43ce54abe1d4a8d760882007b524,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075890748984708082, guid: 2f0e43ce54abe1d4a8d760882007b524,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 51d8ffd0ae8ab8b41a03cf3f12c4c1f0, type: 2}
     - target: {fileID: -4216859302048453862, guid: 2f0e43ce54abe1d4a8d760882007b524,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -187,16 +197,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 2020601624538208979, guid: 2f0e43ce54abe1d4a8d760882007b524,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9075890748984708082, guid: 2f0e43ce54abe1d4a8d760882007b524,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 51d8ffd0ae8ab8b41a03cf3f12c4c1f0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0e43ce54abe1d4a8d760882007b524, type: 3}
 --- !u!23 &5763292867242343046 stripped
@@ -212,6 +212,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6378724518330936051, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: m_Name
+      value: Tomato
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: name
+      value: Tomatoes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.data[0]
+      value: 
+      objectReference: {fileID: 6218245267397126785}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.data[1]
+      value: 
+      objectReference: {fileID: 7974426165003424377}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.data[2]
+      value: 
+      objectReference: {fileID: 5763292867242343046}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: growthStages.Array.data[3]
+      value: 
+      objectReference: {fileID: 6455593436146151545}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: reproductionProp
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2415424249903505641, guid: c64ba902032a7854dab24ac71986afaa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -267,41 +307,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6378724518330936051, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: m_Name
-      value: Tomato
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: name
-      value: Tomatoes
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.data[0]
-      value: 
-      objectReference: {fileID: 6218245267397126785}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.data[1]
-      value: 
-      objectReference: {fileID: 7974426165003424377}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.data[2]
-      value: 
-      objectReference: {fileID: 5763292867242343046}
-    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
-        type: 3}
-      propertyPath: growthStages.Array.data[3]
-      value: 
-      objectReference: {fileID: 6455593436146151545}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c64ba902032a7854dab24ac71986afaa, type: 3}
 --- !u!4 &1745427654042561203 stripped
@@ -322,20 +327,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tomatoes-3
       objectReference: {fileID: 0}
-    - target: {fileID: -4627761801721766270, guid: 6adda16849d30ec4b89f096e6cc2199d,
+    - target: {fileID: -2196663661591621273, guid: 6adda16849d30ec4b89f096e6cc2199d,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
+      propertyPath: m_Name
+      value: Tomatoes-3
       objectReference: {fileID: 0}
-    - target: {fileID: -4627761801721766270, guid: 6adda16849d30ec4b89f096e6cc2199d,
+    - target: {fileID: -2196663661591621273, guid: 6adda16849d30ec4b89f096e6cc2199d,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4627761801721766270, guid: 6adda16849d30ec4b89f096e6cc2199d,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6adda16849d30ec4b89f096e6cc2199d,
         type: 3}
@@ -392,21 +392,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -2196663661591621273, guid: 6adda16849d30ec4b89f096e6cc2199d,
-        type: 3}
-      propertyPath: m_Name
-      value: Tomatoes-3
-      objectReference: {fileID: 0}
-    - target: {fileID: -2196663661591621273, guid: 6adda16849d30ec4b89f096e6cc2199d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1996523755508872423, guid: 6adda16849d30ec4b89f096e6cc2199d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 51d8ffd0ae8ab8b41a03cf3f12c4c1f0, type: 2}
+    - target: {fileID: -4627761801721766270, guid: 6adda16849d30ec4b89f096e6cc2199d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4627761801721766270, guid: 6adda16849d30ec4b89f096e6cc2199d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4627761801721766270, guid: 6adda16849d30ec4b89f096e6cc2199d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6adda16849d30ec4b89f096e6cc2199d, type: 3}
 --- !u!23 &6455593436146151545 stripped

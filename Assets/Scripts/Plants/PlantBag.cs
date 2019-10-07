@@ -56,4 +56,11 @@ public class PlantBag : MonoBehaviour
         return seedCounts[type];
     }
 
+    public void AddType(Plant result)
+    {
+        availailablePlantTypes.Add(result);
+        ui.UpdateAvailablePlantTypes(result);
+        seedCounts.Add(result, DEFAULT_MIN_SEED_COUNT);
+        ui.UpdateSeedCounts(GetSeedCounts());
+    }
 }
