@@ -65,7 +65,7 @@ public class Plant : MonoBehaviour
         }
         float nutrition = 0;
         float water = 0;
-        float light = tile.global.daytimeController.Sunlight - minLight;
+        float light = tile.Global.daytimeController.Sunlight - minLight;
         if (light <= 0)
         {
             light = 0;
