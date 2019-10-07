@@ -69,15 +69,11 @@ public class Plant : MonoBehaviour
     {
         if (degrading)
         {
-<<<<<<< HEAD
-            tile.fertility += Mathf.RoundToInt(growth * PlantPropertyConst.degrading_FertilityReturn_Multi);
-            foreach(Vector2Int vector2Int in PlantPropertyConst.directNeigbour)
+            Tile.fertility += Mathf.RoundToInt(growth * PlantPropertyConst.degrading_FertilityReturn_Multi);
+            foreach (Vector2Int vector2Int in PlantPropertyConst.directNeigbour)
             {
                 //global.Tiles[tile.Row + vector2Int.x]
             }
-=======
-            Tile.fertility += Mathf.RoundToInt(growth * PlantPropertyConst.degrading_FertilityReturn_Multi);
->>>>>>> 6bac29b6132fa74c3e5000090f47e083ec7e3621
             ChangeHealth(-maxHealth / PlantPropertyConst.degradingTime);
         }
         float nutrition = 0;
