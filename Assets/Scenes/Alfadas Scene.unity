@@ -1202,7 +1202,7 @@ MonoBehaviour:
   daytimeController: {fileID: 238838286}
   weatherController: {fileID: 238838287}
   displaLayerManager: {fileID: 1756268273}
-  animalManager: {fileID: 0}
+  animalManager: {fileID: 1584777348}
 --- !u!4 &955453856
 Transform:
   m_ObjectHideFlags: 0
@@ -1590,6 +1590,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a363c78210cf4a64abb50fa5e6f0b171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodNeedPerAnimal: 5
+  animalCount: 0
 --- !u!4 &1584777349
 Transform:
   m_ObjectHideFlags: 0

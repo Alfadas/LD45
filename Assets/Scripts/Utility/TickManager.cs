@@ -65,7 +65,7 @@ public class TickManager : MonoBehaviour
             if (tile.HasPlant)
             {
                 PlantTick(tile.Plant, localWind);
-                if (tile.Plant.Eatable > 0)
+                if (tile.Plant.Eatable > 0 && tile.Plant.isGrownUp())
                 {
                     eatables.Add(tile.Plant);
                 }
@@ -85,8 +85,8 @@ public class TickManager : MonoBehaviour
     private Tile GetRandomEmptyTile()
     {
         int maxIndex = global.worldGridLength - 1;
-        int row = Random.Range(-1, maxIndex);
-        int col = Random.Range(-1, maxIndex);
+        int row = Random.Range(-1, maxIndex -1);
+        int col = Random.Range(-1, maxIndex -1);
         if (global.tiles[row, col].HasPlant)
         {
             return GetRandomEmptyTile();
