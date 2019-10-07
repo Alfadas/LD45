@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: bank:/Master Bank.strings.bank
   m_EditorClassIdentifier: 
   Path: C:\Users\Peppe\Desktop\LD45\LD45fmod\Build\Desktop\Master Bank.strings.bank
-  lastModified: 637060055757645815
+  lastModified: 637060596769256034
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -135,7 +135,7 @@ MonoBehaviour:
   - {fileID: 7887652531162659380}
   StringsBanks:
   - {fileID: -2665692041598307493}
-  stringsBankWriteTime: 637060055757645815
+  stringsBankWriteTime: 637060596769256034
   cacheVersion: 3
 --- !u!114 &144306159661633639
 MonoBehaviour:
@@ -196,9 +196,9 @@ MonoBehaviour:
   m_Name: bank:/Master Bank.bank
   m_EditorClassIdentifier: 
   Path: C:\Users\Peppe\Desktop\LD45\LD45fmod\Build\Desktop\Master Bank.bank
-  lastModified: 637060055757565833
+  lastModified: 637060596769186068
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 24660128
+    Value: 24660032
   Exists: 1

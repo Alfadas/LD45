@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TickManager : MonoBehaviour
@@ -11,14 +10,8 @@ public class TickManager : MonoBehaviour
 
     public bool Pause
     {
-        get
-        {
-            return pause;
-        }
-        set
-        {
-            pause = value;
-        }
+        get { return pause; }
+        set { pause = value; }
     }
 
     public void TogglePause()
@@ -31,7 +24,7 @@ public class TickManager : MonoBehaviour
         StartCoroutine(Ticker());
     }
 
-    protected IEnumerator Ticker()
+    protected IEnumerator Ticker() 
     {
         yield return new WaitForSeconds(intervall);
         while (true)
@@ -40,6 +33,7 @@ public class TickManager : MonoBehaviour
             {
                 yield return new WaitWhile(() => pause);
             }
+
             Tick();
             yield return new WaitForSeconds(intervall);
         }
@@ -73,8 +67,31 @@ public class TickManager : MonoBehaviour
         }
     }
 
+    private Tile getRandomTileAround(Tile tile)
+    {
+        int rowDelta = Random.Range(-1, 2);
+        int colDelta = Random.Range(-1, 2);
+
+        int row = tile.Row + rowDelta;
+        int col = tile.Col + colDelta;
+
+        int maxIndex = global.worldGridLength - 1;
+        
+        if (row < 0 || row > maxIndex || col < 0 || col > maxIndex)
+        {
+            return getRandomTileAround(tile);
+        }
+
+        return global.tiles[row, col];
+    }
+
     private void PlantTick(Plant plant, int localWind)
     {
+        float prop = Random.Range(0f, 1f);
+        if (plant.reproductionProp > prop && plant.isGrownUp())
+        {
+            getRandomTileAround(plant.Tile).PlantPlantByReproduction(plant);
+        }
         plant.Grow();
         plant.ResistLocalWind(localWind);
     }

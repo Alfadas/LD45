@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
@@ -14,15 +15,18 @@ public class Plant : MonoBehaviour
     [SerializeField] PlantPropertys plantPropertys;
     [SerializeField] MeshRenderer[] growthStages;
     [SerializeField] bool degrading = false;
-
+    [SerializeField] public float reproductionProp;
+    
     public int energy = 150; 
     public int health;
 
     public Color current;
     public Color next;
     MeshRenderer currentStage;
+
+    public Tile Tile { get; set; } = null;
     int currentStageIndex;
-    Tile tile;
+
 
     public int WindResistance
     {
@@ -39,6 +43,10 @@ public class Plant : MonoBehaviour
 
     public void Awake()
     {
+        foreach (MeshRenderer render in growthStages)
+        {
+            render.gameObject.SetActive(false);
+        }
         currentStage = growthStages[0];
         currentStageIndex = 0;
         currentStage.gameObject.SetActive(true);
@@ -46,6 +54,7 @@ public class Plant : MonoBehaviour
 
     private void Start()
     {
+        growth = 0;
         energyNeed = Mathf.RoundToInt(PlantPropertyConst.energyNeed_Stable_Multi * plantPropertys.Stable);
         waterNeed = Mathf.RoundToInt(PlantPropertyConst.waterNeed_Stable_Multi * plantPropertys.Stable);
         nutritionNeed = Mathf.RoundToInt(PlantPropertyConst.nutritionNeed_Stable_Multi * plantPropertys.Stable);
@@ -53,23 +62,27 @@ public class Plant : MonoBehaviour
         energy = PlantPropertyConst.startEnergy_Stable_Multi * plantPropertys.Stable;
         maxHealth = PlantPropertyConst.maxHealth_Stable_Multi * plantPropertys.Stable;
         growthPerStage = PlantPropertyConst.growthPerStage_Stable_Multi * plantPropertys.Stable;
-        health = maxHealth;
+        ChangeHealth(maxHealth);
     }
 
     public void Grow()
     {
         if (degrading)
         {
+<<<<<<< HEAD
             tile.fertility += Mathf.RoundToInt(growth * PlantPropertyConst.degrading_FertilityReturn_Multi);
             foreach(Vector2Int vector2Int in PlantPropertyConst.directNeigbour)
             {
                 //global.Tiles[tile.Row + vector2Int.x]
             }
+=======
+            Tile.fertility += Mathf.RoundToInt(growth * PlantPropertyConst.degrading_FertilityReturn_Multi);
+>>>>>>> 6bac29b6132fa74c3e5000090f47e083ec7e3621
             ChangeHealth(-maxHealth / PlantPropertyConst.degradingTime);
         }
         float nutrition = 0;
         float water = 0;
-        float light = tile.Global.daytimeController.Sunlight - minLight;
+        float light = Tile.Global.daytimeController.Sunlight - minLight;
         if (light <= 0)
         {
             light = 0;
@@ -77,24 +90,24 @@ public class Plant : MonoBehaviour
         else
         {
             nutrition = 1;
-            if (tile.fertility < nutritionNeed)
+            if (Tile.fertility < nutritionNeed)
             {
-                nutrition = tile.fertility / nutritionNeed;
-                tile.fertility = 0;
+                nutrition = Tile.fertility / nutritionNeed;
+                Tile.fertility = 0;
             }
             else
             {
-                tile.fertility -= nutritionNeed;
+                Tile.fertility -= nutritionNeed;
             }
             water = 1;
-            if (tile.water < waterNeed)
+            if (Tile.water < waterNeed)
             {
-                water = tile.water / waterNeed;
-                tile.water = 0;
+                water = Tile.water / waterNeed;
+                Tile.water = 0;
             }
             else
             {
-                tile.water -= waterNeed;
+                Tile.water -= waterNeed;
             }
         }
         int energyGain = Mathf.RoundToInt(water * light * nutrition * (currentStageIndex + 1));
@@ -137,8 +150,8 @@ public class Plant : MonoBehaviour
         }
         else if (health <= 0)
         {
-            tile.fertility += Mathf.RoundToInt(growth * PlantPropertyConst.dying_FertilityReturn_Multi);
-            tile.Plant = null;
+            Tile.fertility += Mathf.RoundToInt(growth * PlantPropertyConst.dying_FertilityReturn_Multi);
+            Tile.Plant = null;
             Destroy(gameObject);
             return;
         }
@@ -149,8 +162,9 @@ public class Plant : MonoBehaviour
         }
     }
 
-    public void SetTile(Tile tile)
+    public Boolean isGrownUp()
     {
-        this.tile = tile;
+        return currentStageIndex == growthStages.Length - 1;
     }
+
 }

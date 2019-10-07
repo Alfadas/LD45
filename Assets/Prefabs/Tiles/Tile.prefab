@@ -47,8 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   water: 1000
   fertility: 1000
-  tileViewPrefab: {fileID: -4337275061881380339, guid: 0ec8dd0ebf191488f97807557590db90,
-    type: 3}
 --- !u!65 &4393985375009844631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73,6 +71,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TileView
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836362185650095611, guid: 0ec8dd0ebf191488f97807557590db90,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1577386856599005365, guid: 0ec8dd0ebf191488f97807557590db90,
         type: 3}
@@ -128,6 +131,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577386856599005365, guid: 0ec8dd0ebf191488f97807557590db90,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577386856599005365, guid: 0ec8dd0ebf191488f97807557590db90,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4337275061881380339, guid: 0ec8dd0ebf191488f97807557590db90, type: 3}

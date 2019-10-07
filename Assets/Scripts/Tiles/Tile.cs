@@ -22,6 +22,7 @@ public class Tile : MonoBehaviour
         set
         {
             hasPlant = value != null;
+            GetComponentInChildren<Renderer>().enabled = !hasPlant;
             plant = value;
         }
     }
@@ -32,10 +33,11 @@ public class Tile : MonoBehaviour
     {
         get
         {
-            if (Plant == null)
+            if (!hasPlant)
             {
                 return 0;
             }
+
             return Plant.WindResistance;
         }
     }
@@ -70,24 +72,42 @@ public class Tile : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log($"Row: {Row} Col: {Col}");
-        if (IsPlantable())
+        if (IsPlantableByPlayer())
         {
-            PlantPlant();
+            PlantPlantByPlayer();
         }
     }
 
-    private void PlantPlant()
+    private void PlantPlantByPlayer()
     {
         Plant type = Global.plantSelection.Selected;
         plantBag.DecreaseSeedsOf(type);
-        GameObject plantObj = Instantiate(type.gameObject, transform);
-        Plant = plantObj.GetComponent<Plant>();
-        Plant.SetTile(this);
+        PlantPlant(type);
     }
 
-    private Boolean IsPlantable()
+    private Boolean IsPlantableByPlayer()
     {
         Plant type = Global.plantSelection.Selected;
         return type != null && !hasPlant && plantBag.HasSeedsOf(type);
+    }
+
+    private Boolean IsPlantableByReproduction(Plant type)
+    {
+        return !hasPlant;
+    }
+
+    public void PlantPlantByReproduction(Plant type)
+    {
+        if (IsPlantableByReproduction(type))
+        {
+            PlantPlant(type);
+        }
+    }
+
+    private void PlantPlant(Plant type)
+    {
+        GameObject plantObj = Instantiate(type.gameObject, transform);
+        Plant = plantObj.GetComponent<Plant>();
+        Plant.Tile = this;
     }
 }
