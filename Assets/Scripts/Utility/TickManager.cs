@@ -51,7 +51,7 @@ public class TickManager : MonoBehaviour
         foreach(Tile tile in global.tiles)
         {
             //TileTick(tile);
-            if (tile.Plant != null)
+            if (tile.HasPlant)
             {
                 PlantTick(tile.Plant);
             }
@@ -65,6 +65,6 @@ public class TickManager : MonoBehaviour
 
     private void TileTick(Tile tile)
     {
-
+        
     }
 }
