@@ -30,10 +30,11 @@ public class Tile : MonoBehaviour
     {
         get
         {
-            if (Plant == null)
+            if (!hasPlant)
             {
                 return 0;
             }
+
             return Plant.WindResistance;
         }
     }
@@ -57,9 +58,7 @@ public class Tile : MonoBehaviour
     {
         Plant type = Global.plantSelection.Selected;
         plantBag.DecreaseSeedsOf(type);
-        GameObject plantObj = Instantiate(type.gameObject, transform);
-        Plant = plantObj.GetComponent<Plant>();
-        Plant.Tile = this;
+        PlantPlant(type);
     }
 
     private Boolean IsPlantableByPlayer()
@@ -72,14 +71,19 @@ public class Tile : MonoBehaviour
     {
         return !hasPlant;
     }
-    
+
     public void PlantPlantByReproduction(Plant type)
     {
         if (IsPlantableByReproduction(type))
         {
-            GameObject plantObj = Instantiate(type.gameObject, transform);
-            Plant = plantObj.GetComponent<Plant>();
-            Plant.Tile = this;
+            PlantPlant(type);
         }
+    }
+
+    private void PlantPlant(Plant type)
+    {
+        GameObject plantObj = Instantiate(type.gameObject, transform);
+        Plant = plantObj.GetComponent<Plant>();
+        Plant.Tile = this;
     }
 }
