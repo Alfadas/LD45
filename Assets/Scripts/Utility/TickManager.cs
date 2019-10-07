@@ -4,7 +4,7 @@ using UnityEngine;
 public class TickManager : MonoBehaviour
 {
     [SerializeField] GlobalInformation global;
-    [SerializeField] int intervall = 1;
+    [SerializeField] float intervall = 1;
 
     bool pause;
 
