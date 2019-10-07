@@ -51,7 +51,6 @@ public class TickManager : MonoBehaviour
         int windResistanceSum = 0;
         foreach (Tile tile in global.tiles)
         {
-<<<<<<< HEAD
             windResistanceSum += tile.PlantWindResistance;
         }
         global.weatherController.MoveClouds();
@@ -59,11 +58,7 @@ public class TickManager : MonoBehaviour
         foreach (Tile tile in global.tiles)
         {
             TileTick(tile);
-            if (tile.Plant != null)
-=======
-            //TileTick(tile);
             if (tile.HasPlant)
->>>>>>> f2a630f05a4d3f0b51b1a0770022a44786481685
             {
                 PlantTick(tile.Plant, localWind);
             }
@@ -78,10 +73,6 @@ public class TickManager : MonoBehaviour
 
     private void TileTick(Tile tile)
     {
-<<<<<<< HEAD
         tile.water += global.weatherController.WeatherWaterGain;
-=======
-        
->>>>>>> f2a630f05a4d3f0b51b1a0770022a44786481685
     }
 }
