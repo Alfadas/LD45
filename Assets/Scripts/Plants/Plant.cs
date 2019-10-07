@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
@@ -146,6 +147,11 @@ public class Plant : MonoBehaviour
         {
             renderer.material.SetColor("_BaseColor", new Color(perc, perc, perc));
         }
+    }
+
+    public Boolean isGrownUp()
+    {
+        return currentStageIndex == growthStages.Length - 1;
     }
 
 }

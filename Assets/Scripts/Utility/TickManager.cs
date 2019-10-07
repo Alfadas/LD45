@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TickManager : MonoBehaviour
@@ -25,7 +24,7 @@ public class TickManager : MonoBehaviour
         StartCoroutine(Ticker());
     }
 
-    protected IEnumerator Ticker()
+    protected IEnumerator Ticker() 
     {
         yield return new WaitForSeconds(intervall);
         while (true)
@@ -81,7 +80,7 @@ public class TickManager : MonoBehaviour
     private void PlantTick(Plant plant, int localWind)
     {
         float prop = Random.Range(0f, 1f);
-        if (plant.reproductionProp > prop)
+        if (plant.reproductionProp > prop && plant.isGrownUp())
         {
             getRandomTileAround(plant.Tile).PlantPlantByReproduction(plant);
         }
