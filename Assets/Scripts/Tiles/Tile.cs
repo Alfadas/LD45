@@ -35,24 +35,39 @@ public class Tile : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log($"Row: {Row} Col: {Col}");
-        if (IsPlantable())
+        if (IsPlantableByPlayer())
         {
-            PlantPlant();
+            PlantPlantByPlayer();
         }
     }
 
-    private void PlantPlant()
+    private void PlantPlantByPlayer()
     {
         Plant type = Global.plantSelection.Selected;
         plantBag.DecreaseSeedsOf(type);
         GameObject plantObj = Instantiate(type.gameObject, transform);
         Plant = plantObj.GetComponent<Plant>();
-        Plant.SetTile(this);
+        Plant.Tile = this;
     }
 
-    private Boolean IsPlantable()
+    private Boolean IsPlantableByPlayer()
     {
         Plant type = Global.plantSelection.Selected;
         return type != null && !hasPlant && plantBag.HasSeedsOf(type);
+    }
+
+    private Boolean IsPlantableByReproduction(Plant type)
+    {
+        return !hasPlant;
+    }
+    
+    public void PlantPlantByReproduction(Plant type)
+    {
+        if (IsPlantableByReproduction(type))
+        {
+            GameObject plantObj = Instantiate(type.gameObject, transform);
+            Plant = plantObj.GetComponent<Plant>();
+            Plant.Tile = this;
+        }
     }
 }

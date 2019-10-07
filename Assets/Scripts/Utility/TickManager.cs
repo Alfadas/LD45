@@ -11,14 +11,8 @@ public class TickManager : MonoBehaviour
 
     public bool Pause
     {
-        get
-        {
-            return pause;
-        }
-        set
-        {
-            pause = value;
-        }
+        get { return pause; }
+        set { pause = value; }
     }
 
     public void TogglePause()
@@ -40,6 +34,7 @@ public class TickManager : MonoBehaviour
             {
                 yield return new WaitWhile(() => pause);
             }
+
             Tick();
             yield return new WaitForSeconds(intervall);
         }
@@ -48,7 +43,7 @@ public class TickManager : MonoBehaviour
     private void Tick()
     {
         global.daytimeController.ProgressDay();
-        foreach(Tile tile in global.tiles)
+        foreach (Tile tile in global.tiles)
         {
             //TileTick(tile);
             if (tile.HasPlant)
@@ -58,13 +53,35 @@ public class TickManager : MonoBehaviour
         }
     }
 
+    private Tile getRandomTileAround(Tile tile)
+    {
+        int rowDelta = Random.Range(-1, 2);
+        int colDelta = Random.Range(-1, 2);
+
+        int row = tile.Row + rowDelta;
+        int col = tile.Col + colDelta;
+
+        int maxIndex = global.worldGridLength - 1;
+        
+        if (row < 0 || row > maxIndex || col < 0 || col > maxIndex)
+        {
+            return getRandomTileAround(tile);
+        }
+
+        return global.tiles[row, col];
+    }
+
     private void PlantTick(Plant plant)
     {
+        float prop = Random.Range(0f, 1f);
+        if (plant.reproductionProp > prop)
+        {
+            getRandomTileAround(plant.Tile).PlantPlantByReproduction(plant);
+        }
         plant.Grow();
     }
 
     private void TileTick(Tile tile)
     {
-        
     }
 }
