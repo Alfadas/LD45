@@ -43,12 +43,19 @@ public class TickManager : MonoBehaviour
     private void Tick()
     {
         global.daytimeController.ProgressDay();
+        int windResistanceSum = 0;
         foreach (Tile tile in global.tiles)
         {
-            //TileTick(tile);
+            windResistanceSum += tile.PlantWindResistance;
+        }
+        global.weatherController.MoveClouds();
+        int localWind = global.weatherController.CalcLocalWind(windResistanceSum);
+        foreach (Tile tile in global.tiles)
+        {
+            TileTick(tile);
             if (tile.HasPlant)
             {
-                PlantTick(tile.Plant);
+                PlantTick(tile.Plant, localWind);
             }
         }
     }
@@ -71,7 +78,7 @@ public class TickManager : MonoBehaviour
         return global.tiles[row, col];
     }
 
-    private void PlantTick(Plant plant)
+    private void PlantTick(Plant plant, int localWind)
     {
         float prop = Random.Range(0f, 1f);
         if (plant.reproductionProp > prop)
@@ -79,9 +86,11 @@ public class TickManager : MonoBehaviour
             getRandomTileAround(plant.Tile).PlantPlantByReproduction(plant);
         }
         plant.Grow();
+        plant.ResistLocalWind(localWind);
     }
 
     private void TileTick(Tile tile)
     {
+        tile.water += global.weatherController.WeatherWaterGain;
     }
 }

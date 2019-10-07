@@ -8,6 +8,7 @@ public class DaytimeController : MonoBehaviour
     [SerializeField] float lightStrengthMulti;
     [SerializeField] int nightMulti = 3;
     [SerializeField] Transform sunCycle;
+    [SerializeField] GlobalInformation global;
     bool isNight;
 
     public float Sunlight
@@ -19,7 +20,7 @@ public class DaytimeController : MonoBehaviour
                 return 0;
             }
             float rawLight = sunCycle.rotation.z;
-            return (-2*(rawLight*rawLight) + 2* rawLight) * lightStrengthMulti;
+            return (-2*(rawLight*rawLight) + 2* rawLight) * lightStrengthMulti * global.weatherController.WeatherSunDim;
         }
     }
     public bool IsNight
