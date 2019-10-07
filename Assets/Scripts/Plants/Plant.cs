@@ -64,6 +64,11 @@ public class Plant : MonoBehaviour
     }
     private void Start()
     {
+        CalcPropertys();
+    }
+
+    public void CalcPropertys()
+    {
         foreach (MeshRenderer render in growthStages)
         {
             render.gameObject.SetActive(false);
@@ -180,6 +185,11 @@ public class Plant : MonoBehaviour
         }
         else if (growthStages[nextStage] != currentStage)
         {
+            
+            if (currentStage == null)
+            {
+                Debug.Log(currentStage + " " + currentStageIndex);
+            }
             currentStage.gameObject.SetActive(false);
             currentStage = growthStages[nextStage];
             currentStageIndex = nextStage;

@@ -164,6 +164,7 @@ public class Tile : MonoBehaviour
     {
         GameObject plantObj = Instantiate(type.gameObject, transform);
         Plant = plantObj.GetComponent<Plant>();
+        Plant.CalcPropertys();
         Plant.Tile = this;
     }
 }

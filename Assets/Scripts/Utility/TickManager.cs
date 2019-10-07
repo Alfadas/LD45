@@ -65,7 +65,7 @@ public class TickManager : MonoBehaviour
             if (tile.HasPlant)
             {
                 PlantTick(tile.Plant, localWind);
-                if (tile.Plant.Eatable > 0 && tile.Plant.IsGrownUp())
+                if (tile.HasPlant && tile.Plant.Eatable > 0 && tile.Plant.IsGrownUp())
                 {
                     eatables.Add(tile.Plant);
                 }
