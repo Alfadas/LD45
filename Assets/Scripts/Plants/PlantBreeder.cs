@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlantBreeder : MonoBehaviour
@@ -6,8 +7,8 @@ public class PlantBreeder : MonoBehaviour
     [SerializeField] private List<BreedableCombination> combis;
     [SerializeField] private PlantBag plantBag;
     [SerializeField] private List<Plant> plantTypes;
-    
-    public Plant Breed(Plant first, Plant second)
+
+    private void Awake()
     {
         combis = new List<BreedableCombination>
         {
@@ -21,7 +22,10 @@ public class PlantBreeder : MonoBehaviour
             Combi("Bush2", "Bush2", "Tree"),
             Combi("Onion", "Grass3", "Carrot")
         };
+    }
 
+    public Plant Breed(Plant first, Plant second)
+    {
         if (first == null || second == null) return null;
 
         var testCombi = new BreedableCombination(first, second, null);
@@ -36,6 +40,7 @@ public class PlantBreeder : MonoBehaviour
 
         return null;
     }
+
     public Plant FindByName(string name)
     {
         return plantTypes.Find(type => type.Name.Equals(name));
@@ -66,5 +71,4 @@ class BreedableCombination
         return (first.Name == combination.first.Name && second.Name == combination.second.Name) ||
                (first.Name == combination.second.Name && second.Name == combination.first.Name);
     }
-
 }
