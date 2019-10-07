@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 675ffa2d1263a6c4791e1f1c9dd40d66,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 675ffa2d1263a6c4791e1f1c9dd40d66,
         type: 3}
@@ -120,7 +120,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 1d2eb944b00c0fd4fb7551531777b400,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7089918864898622346, guid: 1d2eb944b00c0fd4fb7551531777b400,
         type: 3}
@@ -141,6 +141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass-2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4404921493276457677, guid: 1d2eb944b00c0fd4fb7551531777b400,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1d2eb944b00c0fd4fb7551531777b400,
         type: 3}
@@ -225,7 +230,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 58664541fcbcd534aa2925e701a05c20,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8748632789078590020, guid: 58664541fcbcd534aa2925e701a05c20,
         type: 3}
@@ -335,7 +340,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 1aea8e3c58ac8fa4db58bd2c8e260c32,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1aea8e3c58ac8fa4db58bd2c8e260c32,
         type: 3}
@@ -522,6 +527,11 @@ PrefabInstance:
       propertyPath: growthStages.Array.data[3]
       value: 
       objectReference: {fileID: 5816464066888212917}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: name
+      value: Grass3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c64ba902032a7854dab24ac71986afaa, type: 3}
 --- !u!4 &4774025024437911627 stripped

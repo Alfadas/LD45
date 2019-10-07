@@ -215,17 +215,17 @@ PrefabInstance:
     - target: {fileID: 2415424249903505641, guid: c64ba902032a7854dab24ac71986afaa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8936138
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2415424249903505641, guid: c64ba902032a7854dab24ac71986afaa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2130427
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2415424249903505641, guid: c64ba902032a7854dab24ac71986afaa,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3022051
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2415424249903505641, guid: c64ba902032a7854dab24ac71986afaa,
         type: 3}
@@ -280,7 +280,7 @@ PrefabInstance:
     - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
         type: 3}
       propertyPath: name
-      value: Tomatoes
+      value: Tomato
       objectReference: {fileID: 0}
     - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
         type: 3}
