@@ -45,7 +45,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 360000
+  Length: 384000
 --- !u!114 &-4305373160177060095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,11 +105,11 @@ MonoBehaviour:
   m_Name: bank:/Master Bank.strings.bank
   m_EditorClassIdentifier: 
   Path: C:\Users\Peppe\Desktop\LD45\LD45fmod\Build\Desktop\Master Bank.strings.bank
-  lastModified: 637060596769256034
+  lastModified: 637060891809470002
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 870
+    Value: 924
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -131,11 +131,12 @@ MonoBehaviour:
   - {fileID: -9165361642953856861}
   - {fileID: 5081504952944134346}
   - {fileID: -3088127414321058342}
+  - {fileID: 3391049954308878804}
   MasterBanks:
   - {fileID: 7887652531162659380}
   StringsBanks:
   - {fileID: -2665692041598307493}
-  stringsBankWriteTime: 637060596769256034
+  stringsBankWriteTime: 637060891809470002
   cacheVersion: 3
 --- !u!114 &144306159661633639
 MonoBehaviour:
@@ -160,6 +161,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 447
+--- !u!114 &3391049954308878804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PlacePlant
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/PlacePlant
+  guid: b94042566b135448927974d504683fc6
+  Banks:
+  - {fileID: 7887652531162659380}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 374
 --- !u!114 &5081504952944134346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,9 +220,9 @@ MonoBehaviour:
   m_Name: bank:/Master Bank.bank
   m_EditorClassIdentifier: 
   Path: C:\Users\Peppe\Desktop\LD45\LD45fmod\Build\Desktop\Master Bank.bank
-  lastModified: 637060596769186068
+  lastModified: 637060891809410011
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 24660032
+    Value: 24729792
   Exists: 1
