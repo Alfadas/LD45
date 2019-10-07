@@ -88,7 +88,7 @@ public class TickManager : MonoBehaviour
     private void PlantTick(Plant plant, int localWind)
     {
         float prop = Random.Range(0f, 1f);
-        if (plant.reproductionProp > prop && plant.isGrownUp())
+        if (plant.reproductionProp > prop && plant.IsGrownUp())
         {
             getRandomTileAround(plant.Tile).PlantPlantByReproduction(plant);
         }

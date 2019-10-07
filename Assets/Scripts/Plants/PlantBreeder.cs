@@ -5,14 +5,15 @@ public class PlantBreeder : MonoBehaviour
 {
     [SerializeField] private List<BreedableCombination> combis;
     [SerializeField] private PlantBag plantBag;
-
+    [SerializeField] private List<Plant> plantTypes;
+    
     public Plant Breed(Plant first, Plant second)
     {
         combis = new List<BreedableCombination>
         {
-            new BreedableCombination(plantBag.GetTypes()[0], plantBag.GetTypes()[1])
+            new BreedableCombination(plantTypes[0], plantTypes[1])
             {
-                Result = plantBag.GetTypes()[1]
+                Result = plantTypes[2]
             }
         };
 
@@ -23,7 +24,7 @@ public class PlantBreeder : MonoBehaviour
 
         var result = combis.Find(combination => combination.Equals(testCombi));
 
-        if (result != null)
+        if (result != null && !plantBag.IsInPlantBag(result.Result))
         {
             plantBag.AddType(result.Result);
             return result.Result;
@@ -48,7 +49,7 @@ class BreedableCombination
 
     public bool Equals(BreedableCombination combination)
     {
-        return (first == combination.first && second == combination.second) ||
-               (first == combination.second && second == combination.first);
+        return (first.Name == combination.first.Name && second.Name == combination.second.Name) ||
+               (first.Name == combination.second.Name && second.Name == combination.first.Name);
     }
 }

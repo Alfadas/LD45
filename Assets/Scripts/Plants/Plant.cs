@@ -158,9 +158,14 @@ public class Plant : MonoBehaviour
         }
     }
 
-    public Boolean isGrownUp()
+    public Boolean IsGrownUp()
     {
         return currentStageIndex == growthStages.Length - 1;
     }
 
+    public override bool Equals(object other)
+    {
+        Plant p = (Plant) other;
+        return p != null && p.Name.Equals(Name);
+    }
 }

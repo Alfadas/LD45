@@ -1887,8 +1887,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -167.47498, y: -145.33}
-  m_SizeDelta: {x: -335.05005, y: -290.7}
+  m_AnchoredPosition: {x: -85.04999, y: -160.5}
+  m_SizeDelta: {x: -170.2, y: -321}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717767925
 MonoBehaviour:
@@ -2003,8 +2003,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 167.5, y: -145.34}
-  m_SizeDelta: {x: -335, y: -290.68}
+  m_AnchoredPosition: {x: 271.4, y: -160.49}
+  m_SizeDelta: {x: -542.9, y: -321.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &719321294
 MonoBehaviour:
@@ -3526,6 +3526,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantBag: {fileID: 136193687}
+  plantTypes:
+  - {fileID: 1625423521168221920, guid: 6e271ee5bd6c31541beb4e2e1b5e8065, type: 3}
+  - {fileID: 203369171554325859, guid: bbce7f617550c8345b85b414b5ab5116, type: 3}
+  - {fileID: 3455255785258550202, guid: ceb2d3d2bf9336043903d0aaa5a31eeb, type: 3}
 --- !u!4 &1675745647
 Transform:
   m_ObjectHideFlags: 0
@@ -3768,6 +3772,7 @@ MonoBehaviour:
   worldGrid: {fileID: 252287301}
   daytimeController: {fileID: 189336778}
   weatherController: {fileID: 189336779}
+  displaLayerManager: {fileID: 0}
 --- !u!4 &1729912953
 Transform:
   m_ObjectHideFlags: 0
