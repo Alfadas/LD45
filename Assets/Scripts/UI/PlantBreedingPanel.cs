@@ -15,6 +15,13 @@ public class PlantBreedingPanel : MonoBehaviour
 
     private void Awake()
     {
+        ClearAndRefillDropDowns();
+        
+        breedButton.onClick.AddListener(OnBreedButtonClick);
+    }
+
+    private void ClearAndRefillDropDowns()
+    {
         firstPlantDropDown.options.Clear();
         secondPlantDropDown.options.Clear();
 
@@ -23,8 +30,6 @@ public class PlantBreedingPanel : MonoBehaviour
 
         firstPlantDropDown.options.AddRange(options);
         secondPlantDropDown.options.AddRange(options);
-
-        breedButton.onClick.AddListener(OnBreedButtonClick);
     }
 
     private void OnBreedButtonClick()
@@ -38,8 +43,9 @@ public class PlantBreedingPanel : MonoBehaviour
         resultText.text = result == null ? "Nothing" : result.Name;
     }
 
-    public void UpdateAvailablePlants()
+    public void UpdateAvailablePlants(Plant type)
     {
-        Awake();
+        ClearAndRefillDropDowns();
+        resultText.text = type.Name;
     }
 }

@@ -63,7 +63,7 @@ public class PlantBag : MonoBehaviour
         ui.UpdateAvailablePlantTypes(result);
         seedCounts.Add(result, DEFAULT_MIN_SEED_COUNT);
         ui.UpdateSeedCounts(GetSeedCounts());
-        breedingUi.UpdateAvailablePlants();
+        breedingUi.UpdateAvailablePlants(result);
     }
     
     public bool IsInPlantBag(Plant type) {
