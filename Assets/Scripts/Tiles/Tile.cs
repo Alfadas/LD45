@@ -6,7 +6,8 @@ public class Tile : MonoBehaviour
 {
     [SerializeField] public int water = 1;
     [SerializeField] public int fertility = 1;
-    
+    [SerializeField] MeshRenderer[] displayLayers;
+    int currentLayerIndex = 0;
     private PlantBag plantBag;
     private Plant plant;
     private bool hasPlant = false;
@@ -39,6 +40,35 @@ public class Tile : MonoBehaviour
             }
 
             return Plant.WindResistance;
+        }
+    }
+
+    public void ChangeLayer (int layerIndex)
+    {
+        displayLayers[currentLayerIndex].gameObject.SetActive(false);
+        currentLayerIndex = layerIndex;
+        displayLayers[currentLayerIndex].gameObject.SetActive(true);
+    }
+
+    public void RefreshLayer()
+    {
+        if (currentLayerIndex == 1)
+        {
+            float perc = 0;
+            if (water < 2000)
+            {
+                perc = (((float)water / (float)2000) - 1) * -1;
+            }
+            displayLayers[currentLayerIndex].material.SetColor("_BaseColor", new Color(perc, perc, 1));
+        }
+        else if (currentLayerIndex == 2)
+        {
+            float perc = 0;
+            if (fertility < 2000)
+            {
+                perc = (((float)fertility / (float)2000) - 1) * -1;
+            }
+            displayLayers[currentLayerIndex].material.SetColor("_BaseColor", new Color(perc, 1, perc));
         }
     }
 

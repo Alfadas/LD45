@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 56c0648adf29dff4aa63361c2b3d82cd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 56c0648adf29dff4aa63361c2b3d82cd,
         type: 3}
@@ -120,7 +120,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 675ffa2d1263a6c4791e1f1c9dd40d66,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 675ffa2d1263a6c4791e1f1c9dd40d66,
         type: 3}
@@ -225,7 +225,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: ae49b84e66baf454196e9712a48282e9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ae49b84e66baf454196e9712a48282e9,
         type: 3}
@@ -330,6 +330,11 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 2c1c9c8a17a849b479b001a69cba0a16,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4649212954587584319, guid: 2c1c9c8a17a849b479b001a69cba0a16,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2c1c9c8a17a849b479b001a69cba0a16,
@@ -401,11 +406,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4649212954587584319, guid: 2c1c9c8a17a849b479b001a69cba0a16,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3872031300063426223, guid: 2c1c9c8a17a849b479b001a69cba0a16,
         type: 3}
@@ -490,7 +490,7 @@ PrefabInstance:
     - target: {fileID: 6378724518330936051, guid: c64ba902032a7854dab24ac71986afaa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
         type: 3}
@@ -517,6 +517,11 @@ PrefabInstance:
       propertyPath: growthStages.Array.data[3]
       value: 
       objectReference: {fileID: 7218128768300235013}
+    - target: {fileID: 4282586339633241913, guid: c64ba902032a7854dab24ac71986afaa,
+        type: 3}
+      propertyPath: name
+      value: Grass1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c64ba902032a7854dab24ac71986afaa, type: 3}
 --- !u!4 &5740473811977105477 stripped
